@@ -1,4 +1,7 @@
 import React from 'react';
+import './components/TodoComponents/Todo.css';
+import TodoList from './components/TodoComponents/TodoList';
+import TodoForm from './components/TodoComponents/TodoForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,14 +18,18 @@ class App extends React.Component {
           id: 1528817084358,
           completed: false
         }
-      ],
+      ]
     };
   }
-  
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <div className="todo-container">
+          <TodoList todoList={this.state.todoList} />
+          <TodoForm />
+        </div>
       </div>
     );
   }
