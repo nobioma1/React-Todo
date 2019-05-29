@@ -1,4 +1,4 @@
 [build]
 base = "lambda-todo/"
-publish = "lambda-todo/start/"
-command = "yarn start"
+publish = "lambda-todo/build/"
+command = "yarn build"
