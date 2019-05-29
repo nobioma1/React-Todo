@@ -18,17 +18,46 @@ class App extends React.Component {
           id: 1528817084358,
           completed: false
         }
-      ]
+      ],
+      newTask: ''
     };
   }
+
+  addTask = () => {
+    const task = {
+      task: this.state.newTask,
+      id: Date.now(),
+      completed: false
+    };
+    this.setState(prevState => ({
+      todoList: [...prevState.todoList, task],
+      newTask: ''
+    }));
+  };
+
+  inputHandler = event => {
+    this.setState({ newTask: event.target.value });
+  };
+
+  keyPressed = event => {
+    if (event.key === 'Enter') {
+      this.addTask();
+    }
+  };
 
   render() {
     return (
       <div className="main-container">
+        <div className="bg-img" />
         <h2>Welcome to your Todo App!</h2>
         <div className="todo-container">
           <TodoList todoList={this.state.todoList} />
-          <TodoForm />
+          <TodoForm
+            inputHandler={this.inputHandler}
+            enterKeyHandler={this.keyPressed}
+            addHandler={this.addTask}
+            text={this.state.newTask}
+          />
         </div>
       </div>
     );
