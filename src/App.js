@@ -23,7 +23,12 @@ class App extends React.Component {
     };
   }
 
-  addTask = () => {
+  componentDidMount() {
+    let data = window.localStorage.getItem('react-todo-noble');
+    if (data !== null) {
+      this.setState({ todoList: JSON.parse(data) });
+    }
+  }
     const task = {
       task: this.state.newTask,
       id: Date.now(),
