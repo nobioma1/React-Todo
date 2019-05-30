@@ -29,6 +29,11 @@ class App extends React.Component {
       this.setState({ todoList: JSON.parse(data) });
     }
   }
+
+  componentDidUpdate() {
+    let data = JSON.stringify(this.state.todoList);
+    window.localStorage.setItem('react-todo-noble', data);
+  }
     const task = {
       task: this.state.newTask,
       id: Date.now(),
