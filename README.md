@@ -1,4 +1,5 @@
 # React-Todo
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2bf05fa4-2d3f-48e3-a7c7-52f2ab4b321f/deploy-status)](https://app.netlify.com/sites/react-todo-noble/deploys)
 
 - At this point you have become familiar with the DOM and have built out User Interfaces using HTML and CSS and some JavaScript using custom components. And you've even had some practice working with React at a basic level. Now we're going to start adding some functionality to that work-flow. It's one thing to be able to build UI components using react, but what about the interactivity of those components?
 
