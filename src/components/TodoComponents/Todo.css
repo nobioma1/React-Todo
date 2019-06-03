@@ -1,16 +1,26 @@
 *, html {
   box-sizing: border-box;
   margin: 0;
+  font-size: 62.5%;
+}
+@media (max-width: 500px) {
+  *, html {
+    font-size: 55%;
+  }
 }
 
 body {
   width: 100%;
   padding-top: 50px;
   font-family: 'Work Sans', sans-serif;
-  font-size: 62.5%;
   height: 100vh;
   color: aliceblue;
   background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+}
+@media (max-width: 500px) {
+  body {
+    padding-top: 10px;
+  }
 }
 
 body .main-container {
@@ -21,17 +31,10 @@ body .main-container {
 }
 
 body h2 {
-  font-size: 2rem;
+  font-size: 3.5rem;
   margin-bottom: 30px;
   z-index: 1;
-}
-
-button:focus {
-  outline: none
-}
-
-button:hover {
-  border-left: 2px solid white;
+  text-align: center;
 }
 
 .todo-container {
@@ -42,11 +45,23 @@ button:hover {
   opacity: 0.95;
   box-shadow: 3px 3px 8px 0px rgba(0,0,0,0.75);
 }
+@media (max-width: 800px) {
+  .todo-container {
+    width: 95%;
+  }
+}
 
 .todo-list {
-  font-size: 1.5rem;
+  font-size: 6.5rem;
   background-color: #65689f;
   padding-bottom: 10px;
+}
+
+.todo-list .no-item {
+  text-align: center;
+  font-family: cursive;
+  padding-top: 5px;
+  font-size: 2rem;
 }
 
 .todo-list .header {
@@ -56,6 +71,12 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 5rem;
+}
+@media (max-width: 500px) {
+  .todo-list .header {
+    flex-direction: column;
+  }
 }
 
 .delete-btn{
@@ -63,14 +84,14 @@ button:hover {
   margin: 3px;
   padding: 10px;
   color: white;
-  font-size: .8rem;
+  font-size: 1.5rem;
   background-color: #F45B69;
   border-radius: 3px;
 }
 
 .todo-list ol {
   padding-left: 38px;
-  font-size: 1.3rem;  
+  font-size: 3rem;  
 }
 
 .todo-item {
@@ -79,50 +100,67 @@ button:hover {
   flex-direction: column;
   padding-top: 15px;
   border-bottom: 1px solid #505285;
-  font-size: 1.3rem;
+  font-size: 3rem;
 }
 
 .todo-item p {
   padding-bottom: 10px;
 }
 
-.todo-item button {
+.todo-item .todo-item-buttons {
   align-self: flex-end;
 }
 
-.todo-input {
+.todo-item .todo-item-buttons .complete-btn {
+  background-color: #07A34D;
+  color: white;
+  border: none;
+  margin: 3px;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 3px;
+}
+
+.todo-item .todo-item-buttons .complete-btn:hover {
+  border-right: 2px solid white;
+}
+
+.todo-item .todo-item-buttons .complete-btn:disabled {
+  background-color: gray;
+}
+
+.todo-input form {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 
-.todo-input input {
+.todo-input form input {
   width: 80%;
-  font-size: 1.2rem;
+  font-size: 2rem;
   padding: 10px 5px;
   border: none;
   border-bottom-left-radius: 3px;
 }
 
-.todo-input input:focus {
+.todo-input form input:focus {
   outline: #07A34D;
 }
 
-.todo-input button {
+.todo-input form button {
   width: 20%;
-  font-size: 1.2rem;
+  font-size: 2rem;
   border: none;
   background-color: rgb(6, 28, 56);
   color: white;
   border-bottom-right-radius: 3px;
 }
 
-.todo-input button:hover {
+.todo-input form button:hover {
   background-color: #07A34D;
 }
 
 .bg-img {
-  height: 50vh;
   background-image: url(../../assets/time.svg);
   background-repeat: no-repeat;
   background-position: left;
@@ -131,4 +169,58 @@ button:hover {
   width: 100%;
   height: 100%;
   z-index: 0;
+}
+@media (max-width: 500px) {
+  .bg-img {
+    background-position: center;
+  }
+}
+
+button:focus {
+  outline: none
+}
+
+button:hover {
+  border-left: 2px solid white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: gray;
+}
+
+.completed {
+  text-decoration: line-through;
+  text-decoration-color: #F45B69;
+  color: gray;
+}
+
+.search-bar {
+  width: 100%;
+  background-color: #505285;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.search-bar form {
+  width: 100%;
+  font-size: 2rem;
+}
+
+.search-bar form input {
+  width: 50%;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: none;
+}
+@media (max-width: 500px) {
+  .search-bar form input {
+    width: 95%;
+  }
+}
+
+.search-bar form input:focus {
+  outline: none;
 }

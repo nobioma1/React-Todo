@@ -1,10 +1,10 @@
 import React from 'react';
-import { FaTrash } from 'react-icons/fa';
+import { FaRegTrashAlt } from 'react-icons/fa';
 
-const DeleteButton = ({ text, action }) => {
+const DeleteButton = ({ text, action, isActive }) => {
   return (
-    <button className="delete-btn">
-      <FaTrash /> {text}
+    <button onClick={action} className="delete-btn" disabled={isActive}>
+      <FaRegTrashAlt /> {text}
     </button>
   );
 };
